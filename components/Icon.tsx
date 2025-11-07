@@ -5,7 +5,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 const ICONS: Record<string, React.ReactNode> = {
-  'paw-print': <><circle cx="12" cy="16" r="4" /><circle cx="7.5" cy="10" r="2.5" /><circle cx="16.5" cy="10" r="2.5" /><circle cx="10" cy="5" r="2" /><circle cx="14" cy="5" r="2" /></>,
+  'paw-print': <><circle cx="11" cy="4" r="2" /><circle cx="18" cy="8" r="2" /><circle cx="20" cy="16" r="2" /><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-7 0V15a5 5 0 0 1 5-5Z" /><circle cx="4.5" cy="12.5" r="2" /></>,
   syringe: <><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 4"/><path d="m9 15 4-4"/><path d="m5 19-3 3"/></>,
   shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>,
   pill: <><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></>,
