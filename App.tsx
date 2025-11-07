@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Dog, Task, HistoryEntry, Periodicity, PeriodicityUnit } from './types';
 import { BASE_TASKS } from './constants';
 import DogSelector from './components/DogSelector';
@@ -10,16 +9,7 @@ import MarkAsDoneModal from './components/MarkAsDoneModal';
 import { Welcome } from './components/Welcome';
 import { Icon } from './components/Icon';
 import { db } from './firebase';
-import { collection, query, where, getDocs, addDoc, doc, updateDoc } from 'firebase/firestore';
-
-const getUserId = (): string => {
-  let userId = localStorage.getItem('paxcare_userId');
-  if (!userId) {
-    userId = `user_${Date.now()}_${Math.random().toString(36).substring(2)}`;
-    localStorage.setItem('paxcare_userId', userId);
-  }
-  return userId;
-};
+import { collection, getDocs, addDoc, doc, updateDoc } from 'firebase/firestore';
 
 const App: React.FC = () => {
   const [dogs, setDogs] = useState<Dog[] | null>(null);
@@ -27,14 +17,12 @@ const App: React.FC = () => {
   const [isAddDogModalOpen, setIsAddDogModalOpen] = useState(false);
   const [taskToEdit, setTaskToEdit] = useState<Task | Partial<Task> | null>(null);
   const [markingTask, setMarkingTask] = useState<Task | null>(null);
-  const userIdRef = useRef<string>(getUserId());
 
   useEffect(() => {
     const fetchDogs = async () => {
       const dogsCollectionRef = collection(db, 'dogs');
-      const q = query(dogsCollectionRef, where('userId', '==', userIdRef.current));
       try {
-        const querySnapshot = await getDocs(q);
+        const querySnapshot = await getDocs(dogsCollectionRef);
         const dogsData = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })) as Dog[];
         setDogs(dogsData);
 
@@ -95,7 +83,6 @@ const App: React.FC = () => {
       ageYears,
       ageMonths,
       tasks: newTasks,
-      userId: userIdRef.current,
     };
 
     try {
@@ -243,7 +230,9 @@ const App: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
                 <div className="flex items-center space-x-3">
-                  <Icon name="paxcare-logo" className="h-8 w-8 text-teal-600" />
+                  <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-teal-100">
+                    <Icon name="paw-print" className="h-6 w-6 text-teal-600" />
+                  </div>
                   <h1 className="text-xl font-bold text-slate-800">PaxCare</h1>
                 </div>
                 {dogs && dogs.length > 0 && (

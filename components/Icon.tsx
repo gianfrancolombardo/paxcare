@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -6,7 +5,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 const ICONS: Record<string, React.ReactNode> = {
-  'paxcare-logo': <><path d="M12.28 4A10 10 0 0 0 4 12.86V15a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-1.14A6 6 0 0 1 15 8h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1.31" /><circle cx="9.5" cy="15.5" r="1.5" /><circle cx="14.5" cy="15.5" r="1.5" /><circle cx="12" cy="12" r="1" /></>,
+  'paw-print': <><circle cx="12" cy="16" r="4" /><circle cx="7.5" cy="10" r="2.5" /><circle cx="16.5" cy="10" r="2.5" /><circle cx="10" cy="5" r="2" /><circle cx="14" cy="5" r="2" /></>,
   syringe: <><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 4"/><path d="m9 15 4-4"/><path d="m5 19-3 3"/></>,
   shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>,
   pill: <><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></>,

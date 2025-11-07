@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Icon } from './Icon';
 
@@ -10,7 +9,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ onAddDog }) => {
     return (
         <div className="text-center bg-white p-8 sm:p-12 rounded-xl shadow-sm border border-slate-200">
             <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-teal-100">
-                <Icon name="paxcare-logo" className="h-12 w-12 text-teal-600" />
+                <Icon name="paw-print" className="h-12 w-12 text-teal-600" />
             </div>
             <h2 className="mt-6 text-2xl font-bold text-slate-900">Bienvenido a PaxCare</h2>
             <p className="mt-2 text-base text-slate-500">
