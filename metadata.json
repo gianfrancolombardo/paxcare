@@ -1,0 +1,5 @@
+{
+  "name": "Dog Health Reminders",
+  "description": "A minimalist application for dog owners in Spain to track important periodic health tasks like vaccinations, deworming, and check-ups for their pets.",
+  "requestFramePermissions": []
+}

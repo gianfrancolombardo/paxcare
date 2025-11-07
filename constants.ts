@@ -1,0 +1,103 @@
+
+import { BaseTask, PeriodicityUnit } from './types';
+
+export const BASE_TASKS: BaseTask[] = [
+  {
+    key: 'core_vaccines',
+    title: 'Vacunas básicas',
+    note: 'Moquillo, parvo, hepatitis y otras. Revisa la cartilla con tu veterinario.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Years },
+    isActive: true,
+  },
+  {
+    key: 'rabies_vaccine',
+    title: 'Vacuna de la rabia',
+    note: 'Vacuna obligatoria según tu comunidad autónoma. Ten la cartilla siempre al día.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Years },
+    isActive: true,
+  },
+  {
+    key: 'leishmania_vaccine',
+    title: 'Vacuna leishmania',
+    note: 'Vacuna extra frente a leishmaniosis (muy común en España). Pregunta a tu veterinario si la recomienda.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Years },
+    isActive: false,
+  },
+  {
+    key: 'external_collar',
+    title: 'Collar antiparasitario',
+    note: 'Collar frente a pulgas, garrapatas y mosquitos (ej. Scalibor®, Seresto®). Reemplázalo cuando caduque.',
+    periodicity: { value: 6, unit: PeriodicityUnit.Months },
+    isActive: true,
+  },
+  {
+    key: 'external_spot_on',
+    title: 'Pipeta antiparasitaria',
+    note: 'Pipeta mensual para pulgas, garrapatas y/o mosquitos. Aplica sobre la piel del cuello.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Months },
+    isActive: false,
+  },
+  {
+    key: 'external_oral',
+    title: 'Pastilla antipulgas/garrapatas',
+    note: 'Comprimido masticable frente a pulgas y garrapatas (ej. Bravecto®, NexGard®, Simparica®).',
+    periodicity: { value: 3, unit: PeriodicityUnit.Months },
+    isActive: false,
+  },
+  {
+    key: 'internal_deworming',
+    title: 'Pastilla parásitos internos',
+    note: 'Desparasitación interna (ej. Milpro®, Milbemax®). Pregunta a tu veterinario cada cuánto darle.',
+    periodicity: { value: 3, unit: PeriodicityUnit.Months },
+    isActive: true,
+  },
+  {
+    key: 'heartworm_prevention',
+    title: 'Prevención gusano del corazón',
+    note: 'Pastilla o pipeta mensual frente a filaria (gusano del corazón), según zona de riesgo.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Months },
+    isActive: false,
+  },
+  {
+    key: 'annual_checkup',
+    title: 'Revisión anual con el veterinario',
+    note: 'Chequeo general: peso, piel, articulaciones, corazón y dudas que tengas.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Years },
+    isActive: true,
+  },
+  {
+    key: 'senior_labs',
+    title: 'Analítica anual (perro mayor)',
+    note: 'Análisis de sangre y orina para revisar riñón, hígado, azúcar, etc.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Years },
+    isActive: false,
+  },
+  {
+    key: 'dental_home_care',
+    title: 'Limpieza de dientes en casa',
+    note: 'Cepilla los dientes o usa snacks dentales para reducir el sarro y el mal aliento.',
+    periodicity: { value: 7, unit: PeriodicityUnit.Days },
+    isActive: false,
+  },
+  {
+    key: 'dental_professional',
+    title: 'Limpieza dental en el veterinario',
+    note: 'Limpieza con ultrasonidos bajo anestesia, cuando el vet la recomiende.',
+    periodicity: { value: 2, unit: PeriodicityUnit.Years },
+    isActive: false,
+  },
+  {
+    key: 'weight_check',
+    title: 'Control de peso',
+    note: 'Pésalo y ajusta la ración si hace falta. El sobrepeso da muchos problemas.',
+    periodicity: { value: 1, unit: PeriodicityUnit.Months },
+    isActive: true,
+  },
+  {
+    key: 'grooming_nails',
+    title: 'Baño, uñas y peluquería',
+    note: 'Revisa uñas, pelo y baño según la raza y el estilo de vida de tu perro.',
+    periodicity: { value: 2, unit: PeriodicityUnit.Months },
+    isActive: false,
+  },
+];
